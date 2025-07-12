@@ -2,7 +2,7 @@
 
 ## 📋 Descripción
 
-Sistema automatizado en Python 3 para la emisión masiva de boletas electrónicas a partir de documentos internos. El sistema lee archivos Excel con documentos internos y genera boletas optimizadas respetando el límite máximo de S/ 699 por boleta.
+Sistema automatizado en Python 3 para la emisión masiva de boletas electrónicas a partir de documentos internos. El sistema lee archivos Excel con documentos internos y genera boletas optimizadas respetando el límite máximo de S/ 600 por boleta.
 
 ## 🚀 Características
 
