@@ -25,12 +25,6 @@ upc_programacion1_bolmasivo/
 ├── requirements.txt            # Dependencias
 ├── .gitignore                  # Archivos a ignorar en Git
 ├── ejemplo_DocumentosInternos.xlsx  # Archivo de ejemplo
-├── test_sistema.py             # Pruebas completas del sistema
-├── probar_rapido.py            # Prueba rápida del sistema
-├── probar_excel.py             # Prueba específica para Excel
-├── demo_sistema.py             # Demostración del sistema
-├── GUIA_NUEVO_FORMATO.md       # Guía del nuevo formato
-├── INSTALACION.md              # Guía de instalación
 ├── DOCUMENTACION_TECNICA.md    # Documentación técnica
 ├── out/                        # Carpeta de archivos de salida
 │   ├── boletas_D001-1.xlsx     # Boletas generadas para D001-1
@@ -185,8 +179,6 @@ Edita el archivo `config.py` para modificar:
 
 ## 📚 Documentación Adicional
 
-- **`GUIA_NUEVO_FORMATO.md`**: Guía detallada del nuevo formato de entrada
-- **`INSTALACION.md`**: Instrucciones de instalación paso a paso
 - **`DOCUMENTACION_TECNICA.md`**: Documentación técnica completa del sistema
 
 ## 🛡️ Control de Versiones
@@ -226,4 +218,4 @@ Desarrollado para el curso de Fundamentos de Programación - UPC
 
 ---
 
-**Nota**: Este sistema está diseñado para cumplir con los requisitos específicos de emisión de boletas electrónicas en Perú, respetando el límite máximo de S/ 699 por boleta según la normativa vigente. Los archivos de salida se organizan automáticamente en la carpeta `out/` con nombres descriptivos que incluyen la serie y número del documento interno procesado.
+**Nota**: Este sistema está diseñado para cumplir con los requisitos específicos de emisión de boletas electrónicas en Perú, respetando el límite máximo de S/ 600 por boleta según la normativa vigente. Los archivos de salida se organizan automáticamente en la carpeta `out/` con nombres descriptivos que incluyen la serie y número del documento interno procesado.
