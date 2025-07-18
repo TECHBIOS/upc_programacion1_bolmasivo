@@ -3,8 +3,9 @@ Configuración del sistema de emisión masiva de boletas electrónicas
 """
 
 # Parámetros configurables del sistema
-LIMITE_MAXIMO_BOLETA = 600.00  # Límite máximo por boleta en soles
+LIMITE_MAXIMO_BOLETA = 699.00  # Límite máximo por boleta en soles
 PORCENTAJE_IGV = 18.0  # Porcentaje de IGV (18%)
+PORCENTAJE_IGV_CALCULO = 1.18  # importe de IGV calculable
 
 # Datos genéricos del cliente
 DATOS_CLIENTE = {
