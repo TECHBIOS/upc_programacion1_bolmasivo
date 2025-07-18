@@ -79,7 +79,7 @@ def main():
                 sistema_boletas = BoletaElectronica()
                 # Procesar el archivo completo
                 print("🔄 Iniciando procesamiento...")
-                sistema_boletas.procesar_manual(df_interno)
+                sistema_boletas.preProcesamiento(df_interno)
 
                 # Generar resumen
                 resumen = sistema_boletas.generar_resumen()
@@ -123,7 +123,8 @@ def main():
                 
                 # Procesar el archivo completo
                 print("🔄 Iniciando procesamiento...")
-                sistema_boletas.procesar_archivo(ARCHIVO_ENTRADA)
+                df = sistema_boletas.leer_archivo_entrada(ARCHIVO_ENTRADA)
+                sistema_boletas.preProcesamiento(ARCHIVO_ENTRADA)
                 
                 # Generar resumen
                 resumen = sistema_boletas.generar_resumen()

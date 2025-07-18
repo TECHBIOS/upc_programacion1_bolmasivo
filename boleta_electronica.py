@@ -136,7 +136,7 @@ class BoletaElectronica:
 
         return items_divididos
 
-    def optimizar_empaquetado(
+    def optimizacion(
         self, items: List[Dict[str, Any]], limite: float
     ) -> List[List[Dict[str, Any]]]:
         """
@@ -175,7 +175,7 @@ class BoletaElectronica:
                 cantidad_restante -= max_cantidad
         return boletas
 
-    def generar_boleta(
+    def generar_formato_Boleta(
         self, items: List[Dict[str, Any]], documento_origen: str
     ) -> Dict[str, Any]:
         """
@@ -224,7 +224,7 @@ class BoletaElectronica:
         self.boletas_generadas.append(boleta)
         return boleta
 
-    def procesar_documento(self, df_documento: pd.DataFrame) -> List[Dict[str, Any]]:
+    def procesamiento(self, df_documento: pd.DataFrame) -> List[Dict[str, Any]]:
         """
         Procesar un documento interno y generar sus boletas correspondientes
 
@@ -254,7 +254,7 @@ class BoletaElectronica:
             items.append(item)
 
         # Optimizar empaquetado
-        boletas_items = self.optimizar_empaquetado(items, LIMITE_MAXIMO_BOLETA)
+        boletas_items = self.optimizacion(items, LIMITE_MAXIMO_BOLETA)
 
         # Generar boletas
         boletas_generadas = []
@@ -275,38 +275,9 @@ class BoletaElectronica:
 
         return boletas_generadas
 
-    def procesar_archivo(self, archivo_entrada: str) -> None:
+    def pre_procesamiento(self, df: str) -> None:
         """
-        Procesar el archivo completo de documentos internos
-
-        Args:
-            archivo_entrada: Ruta del archivo de entrada
-        """
-        try:
-            # Leer archivo
-            df = self.leer_archivo_entrada(archivo_entrada)
-
-            # Agrupar por documento interno
-            documentos = df.groupby("numero_documento")
-
-            self.logger.info(f"Iniciando procesamiento de {len(documentos)} documentos")
-
-            # Procesar cada documento
-            for numero_doc, df_documento in documentos:
-                self.procesar_documento(df_documento)
-
-            # Generar archivos de salida
-            self.generar_archivos_salida()
-
-            self.logger.info("Procesamiento completado exitosamente")
-
-        except Exception as e:
-            self.logger.error(f"Error en el procesamiento: {str(e)}")
-            raise
-
-    def procesar_manual(self, df: str) -> None:
-        """
-        Procesar el registro manual
+        df: dataframe
 
         Args:
             archivo_entrada: Ruta del archivo de entrada
@@ -319,7 +290,7 @@ class BoletaElectronica:
 
             # Procesar cada documento
             for numero_doc, df_documento in documentos:
-                self.procesar_documento(df_documento)
+                self.procesamiento(df_documento)
 
             # Generar archivos de salida
             self.generar_archivos_salida()
